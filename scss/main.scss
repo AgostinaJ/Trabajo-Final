@@ -1,0 +1,225 @@
+/* Comienzo de los Imports */ 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Playfair+Display:ital@0;1&display=swap');
+@import 'variables';
+@import 'home';
+@import 'camino';
+@import 'galeria';
+@import 'eventos';
+@import 'contacto';
+@import 'responsive';
+
+/* Fin de los Imports */ 
+
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+
+body {
+    background: $blanco;
+    height: 100vh;
+    line-height: 1;
+}
+
+a {
+    color: $blanco;
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    padding: 0.5rem;
+    background: $negro;
+    height: 3rem;
+}
+
+section{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    background: $negro;
+    height: 2.2rem;
+    z-index: 1;
+
+    .social-icons {
+        justify-self: center;
+        bottom: 1rem;
+        left: 1rem;
+
+        a {
+            padding: 0.4rem;
+            @include transition-ease;
+
+            &:hover {
+                color: $verde
+            }
+        }
+    }
+    footer {
+        font-size: 1rem;
+        font-family: $playfair;
+        bottom: 0.4rem;
+        right: 1rem;
+        text-align: center;
+        padding: 1rem;
+        color: $naranja;
+        background: $negro;
+    }
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none; 
+    outline: none; 
+    background-color: $naranja;
+    color: $blanco; 
+    cursor: pointer; 
+    padding: 15px; 
+    border-radius: 100px; 
+    font-size: 18px; 
+
+    &:hover {
+        background-color: $verde;
+    }
+}
+
+.logo {
+    height: 5vh;
+    position: absolute;
+    margin: 0 auto auto 2rem;
+    display: flex;
+    z-index: 2;
+    align-self: start;
+    padding-left: 5px;
+}
+
+
+/* menu */ 
+.menu-btn {
+    position: absolute;
+    z-index: 1;
+    left: 1rem;
+    top: 1rem;
+    height: 20px;
+    width: 28px;
+    cursor: pointer;
+    @include transition-ease;
+
+    &__burger {
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        width: 28px;
+        height: 3px;
+        background: $blanco;
+        @include transition-ease;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            width: 28px;
+            height: 3px;
+            background: $blanco;
+            @include transition-ease;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            width: 28px;
+            height: 3px;
+            background: $blanco;
+            @include transition-ease;
+        }
+
+        &.open {
+            transform: rotate(720deg);
+            background: transparent;
+
+            &::before {
+                transform: rotate(45deg) translate(5px, 8px);
+            }
+
+            &::after {
+                transform: rotate(-45deg) translate(3px, -7px);
+            }
+        }
+    }
+}
+
+
+.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    opacity: 0.95;
+    visibility: hidden;
+
+    &.open {
+        visibility: visible;
+    }
+
+    .menu-nav {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        background: $negro;
+        list-style-type: none;
+        padding-right: 1rem;
+        transform: translateX(-100%);
+        @include transition-ease;
+
+        &.open {
+            transform: translateX(0);
+
+        }
+
+        &__item {
+            transform: translateX(-100vw);
+            @include transition-ease;
+
+            &.open {
+                transform: translateX(0);
+            }
+
+            &.active > a {
+                color: $naranja;
+            }
+        }
+
+        &__link {
+            display: inline-block;
+            font-size: 2rem;
+            font-family: $oswald;
+            padding: 2rem 0;
+            @include transition-ease;
+
+
+            &:hover {
+                color: $mandarina;
+            }
+        }
+    }
+}
+
+
+@for $i from 1 through 5 {
+    .menu-nav__item:nth-child(#{$i}) {
+        transition-delay: ($i * 0.1s) + 0.10s;
+    }
+}

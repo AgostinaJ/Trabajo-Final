@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Multimedia/">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <header data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+        <img class="logo" src="/dist/Multimedia/Kyoen.png" alt="Logo Kyoen" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="2000">
+
+        <div class="menu-btn">
+            <span class="menu-btn__burger"></span>
+        </div>
+
+        <nav class="nav">
+            <ul class="menu-nav">
+                <li class="menu-nav__item">
+                    <a href="/index.html" class="menu-nav__link">Home</a>
+                </li>
+                <li class="menu-nav__item">
+                    <a href="./sobre-el-camino/sobre-camino.html" class="menu-nav__link">Sobre el Camino</a>
+                </li>
+                <li class="menu-nav__item">
+                    <a href="./galeria.html" class="menu-nav__link">Galeria de Fotos</a>
+                </li>
+                <li class="menu-nav__item">
+                    <a href="./eventos.html" class="menu-nav__link">Eventos</a>
+                </li>
+                <li class="menu-nav__item active">
+                    <a href="./contacto.html" class="menu-nav__link">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="hero-image-contacto" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+        <h1>Contacto</h1>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">🡹</button> 
+
+
+    <form>
+        <div class="container-form">
+        <h2 class="container-form__subtitulo">¡Mantengamos el contacto!</h2>
+        <p class="container-form__text">Suscribite al Newsletter y enterate sobre nuestros próximos eventos, además de nuestras novedades!</p>
+        <input type="text" placeholder="Email address" name="mail" required>
+        <input type="submit" value="Subscribe">
+        </div>
+    </form> 
+
+
+    <section class="home">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/alejandroaizawa">
+                <i class="fab fa-facebook fa-2x"></i>
+            </a>
+            <a href="https://www.instagram.com/kyoen/">
+                <i class="fab fa-instagram fa-2x"></i>
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=%2B5491165684873&text&app_absent=0">
+                <i class="fa fa-whatsapp fa-2x"></i>
+            </a>
+        </div>
+
+        <footer>
+            &copy; Copyright 2021
+        </footer>
+    </section>
+
+<script src="/js/main.js"></script>
+    <script>
+        mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+        }
+        function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0; 
+        } 
+    </script>
+    <script src="https://kit.fontawesome.com/188071f7de.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+</html>

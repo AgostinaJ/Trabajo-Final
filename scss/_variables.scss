@@ -1,0 +1,48 @@
+/* Colores */ 
+$naranja: #fc5130;
+$blanco: #eef0f2;
+$verde: #377771;
+$negro: #000500;
+$gris: #cecece;
+$mandarina: #FF9F55;
+
+/* Tipografia */ 
+$oswald: 'Oswald', sans-serif;
+$playfair: 'Playfair Display', serif;
+
+/* responsive */ 
+$mobile: 800px;
+$tablet: 1000px;
+$desktop: 1800px;
+
+/* resets */ 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* mixins */ 
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+

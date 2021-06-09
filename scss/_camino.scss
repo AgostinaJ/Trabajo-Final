@@ -1,0 +1,111 @@
+.hero-image-camino {
+    height: 50vh;
+    width: 100%;
+    background: linear-gradient( to right, rgba($negro, 0.4), rgba($negro, 0.4)),
+    url(../dist/Multimedia/camino.jpg) center top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+
+    h1 {
+        margin-bottom: 3rem;
+        font-family: $oswald;
+        color: $blanco;
+        font-size: 2rem;
+    }
+}
+
+.parrafo-camino {
+    width: 90vw;
+    margin: 0.5rem 0.2rem 0;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    font-family: $playfair;
+    font-size: 1rem;
+    color: $negro;
+    line-height: 1.5;
+
+    &__video {
+        width: 300px;
+        margin: 0.5rem;
+        padding: 1.2rem;
+    }
+
+    &__line {
+        margin: 1.2rem;
+        width: 100%;
+        background: $gris;
+        padding: 10px;
+        text-align: center;
+
+        span {
+            font-style: italic;
+        }
+    }
+}
+
+.parrafo-camino__line--link {
+    margin: 1.2rem;
+    width: 100%;
+    background: $verde;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+
+    a {
+        padding: 0.4rem;
+        @include transition-ease;
+
+        &:hover {
+            color: $negro;
+        }
+    }
+}
+
+.imagen-camino {
+    margin: 1rem;
+    width: 90%;
+}
+
+.imagen-camino-dos {
+    margin: 1rem;
+    width: 90%;
+}
+
+.imagen-camino--galeria {
+    margin: 1rem;
+    width: 90%;
+    position: relative;
+    border-bottom: 5px solid $naranja;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.imagen-banner {
+    width: 100%;
+    height: 40vh;
+}
+
+
+.grilla {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    margin: 50px;
+
+    &__columna {
+        max-width: 25%;
+
+
+        img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 80%;
+        }
+
+    }
+}
